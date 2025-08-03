@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+	<title>인풋 샘플</title>
+
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body *{font-family:'Pretendard'; box-sizing:border-box;    margin:0; padding:0;}
+ul , li{list-style:none; margin:0; padding:0;}
+
+.form_wrap{width:500px; margin:0 auto;}
+.form_list li{border:1px solid transparent;margin-bottom:32px;}
+.form_list li + li{}
+
+.form_group{position:relative;}
+.form_group .input {width: 100%;height:48px;border:none;border-bottom:1px solid #d8d8d8;    font-size: 16px;padding:0; }
+.form_group .input::-webkit-inner-spin-button{appearance: none;-moz-appearance: none; -webkit-appearance: none;}
+.form_group .input:focus{border-width:2px;border-color:#0C70F5;outline:none;}
+.form_group .input:focus::placeholder{opacity:0;color:#eee;}
+.form_group .input[readonly]{}
+.form_group .input[readonly]:focus{}
+.form_group .form_label {position: absolute;left:0;top:24px;z-index:10;color:#999;font-size:16px;transition:transform 150ms ease-out, font-size 150ms ease-out;font-weight:300;opacity:0;}
+.form_group.focused, 
+.form_group.fixed , 
+.form_group.disabled {margin-top:32px}
+.form_group.focused .form_label, 
+.form_group.fixed .form_label, 
+.form_group.disabled .form_label {opacity:1; transform: translate(0, -48px); font-size: 14px; line-height:20px;font-weight: 900; color:black;}
+.form_group.focused .input,
+.form_group.fixed .input,
+.form_group.disabled .input{}
+.form_group.disabled .input[disabled]:focus{}
+
+</style>
+
+</head>
+<body>
+
+	<div style="margin:20px auto 80px;max-width:500px;">
+		<ul class="form_list">
+		    <li>
+			<div class="form_group">
+				<label class="form_label" for="input011">111</label>
+				<input type="text" class="input" id="input011" value="" placeholder="아이디(이메일)을 입력하세요.">
+			</div>
+		</li>
+		<li>
+			<div class="form_group">
+				<label class="form_label" for="input000">222</label>
+				<input type="password" class="input" id="input000" value="" placeholder="비밀번호">
+			</div>
+		</li>
+		</ul>
+		<button type="button" style="width:100%;border:none;height:50px;background:skyblue;margin-top:60px;"> 로그인</button>
+	</div>
+
+
+	<div class="form_wrap">
+		<ul class="form_list">
+		    <li>
+				<div class="form_group">
+					<label class="form_label" for="input0">아이디(이메일)</label>
+					<input type="text" class="input" id="input0" value="ibk@ibk.co.kr" placeholder="아이디(이메일)을 입력하세요.">
+				</div>
+		    </li>
+		    <li>
+				<div class="form_group">
+					<label class="form_label" for="input1">이름</label>
+					<input type="text" class="input" id="input1" value="" placeholder="이름을 입력하세요.">
+				</div>
+		    </li>
+		    <li>
+				<div class="form_group">
+					<label class="form_label" for="input2">휴대폰번호</label>
+					<input type="number" class="input" id="input2" placeholder="휴대폰번호(-없이 입력하세요.)">
+				</div>
+		    </li>
+		    <li>
+				<div class="form_group">
+					<label class="form_label" for="input3">고정값</label>
+					<input type="text" class="input" id="input3" placeholder="고정값" value="고정값" readonly>
+				</div>
+		    </li>
+		    <li>
+				<div class="form_group">
+					<label class="form_label" for="input4">레이블 disabled</label>
+					<input type="text" class="input" id="input4" placeholder="disabled 시" disabled>
+				</div>
+		    </li>
+		    <li>
+				<div class="form_group">
+					<label class="form_label" for="input5">샘플타이틀</label>
+					<input type="text" class="input" id="input5" placeholder="도움말 텍스트.">
+				</div>
+		    </li>
+		    <li>
+				<div class="form_group">
+					<label class="form_label" for="input6">샘플타이틀</label>
+					<input type="text" class="input" id="input6" placeholder="플레이스홀더">
+				</div>
+		    </li>
+			<li>
+				<div class="form_group">
+					<label class="control-label" for="selectCtrl">Select Option Value</label>
+					<select type="text" class="form-control" id="selectCtrl">
+					  <option>Select Option Value</option>
+					  <option>Option 1</option>
+					  <option>Option 2</option>
+					  <option>Option 3</option>
+					  <option>Option 4</option>
+					</select>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+
+
+
+
+<script>
+// Input focus, blur, and value check
+function toggleFormGroupState(input) {
+	var $formGroup = $(input).parents('.form_group');
+	var hasValue = $(input).val() !== '';
+	$formGroup.toggleClass('fixed', hasValue);
+	$formGroup.removeClass('focused');
+}
+
+$('.form_group input').each(function() {
+	toggleFormGroupState(this);
+}).on('focus', function() {
+	$(this).parents('.form_group').addClass('focused');
+}).on('blur', function() {
+	toggleFormGroupState(this);
+});
+
+</script>
+
+
+
+</body>
+</html>
