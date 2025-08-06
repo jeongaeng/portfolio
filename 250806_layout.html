@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="swiper-bundle.min.css" />
+  <script src="jquery.min.js"></script>
+  <script src="swiper-bundle.min.js"></script>
+
+  <!-- Demo styles -->
+  <style>
+	*{margin:0;padding:0;box-sizing:border-box;}
+
+	body{background-color:#f4f4f4;}
+	.wrap{position:relative;margin:20px auto 0;max-width:1200px;}
+	header{position:absolute;top:0;width:200px;height:900px;background-color:#fff;}
+	.top_util{position:absolute;top:0;left:0;width:900px;height:40px;margin-left:240px;background-color:#fff;}
+	.container{margin-left:240px;padding-top:100px;}
+	.contents{width:920px;/*max-height:600px;*/height:calc(100% - 150px);overflow-y: auto;}
+	.contents_inner{width:900px;background:#fff;}
+
+	::-webkit-scrollbar{
+		width: 10px;  /* 스크롤바의 너비 */
+	}
+	::-webkit-scrollbar-thumb {
+		height: 30%; /* 스크롤바의 길이 */
+		background: #217af4; /* 스크롤바의 색상 */
+		
+		border-radius: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: rgba(33, 122, 244, .1);  
+		/*스크롤바 뒷 배경 색상*/
+		/* background:transparent !important; */
+	}	
+	::-webkit-scrollbar:horizontal {
+		height:10px;
+	}
+	::-webkit-scrollbar-thumb:horizontal {
+		width: 30%; /* 스크롤바의 길이 */
+		background: #217af4; /* 스크롤바의 색상 */		
+		border-radius: 10px;
+	}
+
+
+	/* 임의의 영역 생성 */
+	.scrollBar { 
+		overflow-y: scroll;
+	}
+
+	/* 아래의 모든 코드는 영역::코드로 사용 */
+	.scrollBar::-webkit-scrollbar {
+		width: 10px;  /* 스크롤바의 너비 */
+	}
+
+	.scrollBar::-webkit-scrollbar-thumb {
+		height: 30%; /* 스크롤바의 길이 */
+		background: #217af4; /* 스크롤바의 색상 */
+		
+		border-radius: 10px;
+	}
+
+	.scrollBar::-webkit-scrollbar-track {
+		/* background: rgba(33, 122, 244, .1);   */
+		/*스크롤바 뒷 배경 색상*/
+		background:transparent !important;
+	}
+  </style>
+</head>
+
+<body>
+	<div class="wrap">
+		<header>
+			헤더영역
+		</header>
+
+		<div class="top_util">
+			탑유틸
+		</div>
+
+		<main class="container">
+			<div class="contents scrollBar">
+				<div class="contents_inner">
+					<div class="">
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					컨텐츠	<br>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
